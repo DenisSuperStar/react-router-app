@@ -1,5 +1,10 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  NavLink,
+} from "react-router-dom";
 import Home from "./components/Home/Home";
 import Forza from "./components/Forza/Forza";
 import Drift from "./components/Drift/Drift";
@@ -9,19 +14,47 @@ export default function App() {
   return (
     <Router>
       <>
-        <nav class="nav">
-          <Link className="nav-link" to="/">
+        <nav className="nav">
+          <NavLink
+            className="nav-link"
+            style={({ isActive }) => ({
+              color: isActive ? "#fff" : "#545e6f",
+              background: isActive ? "#7600dc" : "#f0f0f0",
+            })}
+            to="/"
+          >
             Главная
-          </Link>
-          <Link className="nav-link" to="/drift">
+          </NavLink>
+          <NavLink
+            className="nav-link"
+            style={({ isActive }) => ({
+              color: isActive ? "#fff" : "#545e6f",
+              background: isActive ? "#7600dc" : "#f0f0f0",
+            })}
+            to="/drift"
+          >
             Дрифт-такси
-          </Link>
-          <Link className="nav-link" to="/timeattack">
+          </NavLink>
+          <NavLink
+            className="nav-link"
+            style={({ isActive }) => ({
+              color: isActive ? "#fff" : "#545e6f",
+              background: isActive ? "#7600dc" : "#f0f0f0",
+            })}
+            to="/timeattack"
+          >
             Timeattack
-          </Link>
-          <Link className="nav-link" to="/forza">
+          </NavLink>
+          <NavLink
+            className="nav-link"
+            style={({ isActive }) => ({
+              color: isActive ? "#fff" : "#545e6f",
+              background: isActive ? "#7600dc" : "#f0f0f0",
+            })}
+            to="/forza"
+          >
             Forza
-          </Link>
+          </NavLink>
         </nav>
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
